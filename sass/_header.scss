@@ -1,0 +1,46 @@
+/* CSS Document */
+nav {
+	#global-nav{
+	-webkit-transition: height .5s, line-height .5s; /* Safari */
+    transition: height .5s, line-height .5s;
+	}
+	
+	#logo {
+		  -webkit-transition: all .5s;
+    transition: all .5s;
+		width: 50px;
+		height: 50px;
+		@media only screen and (min-width: 600px) {
+			width: 100px;
+		height: 100px;
+		}
+	}
+
+	.btn-outline-warning {
+		color: $secondaryColor;
+		border-color: $secondaryColor;
+	}
+	.btn-outline-warning:hover, .btn-outline-warning:focus, .btn-outline-warning:active, .btn-outline-warning:visited {
+		color: $fontColor;
+		background: $secondaryColor;
+		border-color: $secondaryColor;
+	}
+	.material-icons {
+		font-size: 14px;
+	}
+}
+header {
+	.carousel {
+		p {
+			font-size: 40px;
+			color: $thirdColor;
+		}
+		.carousel-caption {
+			background: rgba(229, 148, 37, 0.75);
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			position: absolute;
+			bottom: 0;
+		}
+	}
+}

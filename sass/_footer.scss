@@ -1,0 +1,22 @@
+/* CSS Document */
+footer {
+	h5 {
+		color: $secondaryColor;
+	}
+	a {
+		color: $secondaryColor;
+	}
+	
+	background-image: url("../images/hero2.jpg");
+	background-color: rgba(34, 37, 52, 0.75);
+	background-position: center; /* Center the image */
+  	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover; /* Resize the background image to cover the entire container */
+	color: $fontColor;
+	.overlay {
+		background: rgba(34, 37, 52, 0.75);
+	}
+	.footer-copyright {
+		background: rgba(34, 37, 52, 0.9);
+	}
+}
