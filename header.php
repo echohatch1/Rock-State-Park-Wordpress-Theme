@@ -19,13 +19,24 @@
 <body>
 	
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="global-nav" style="background-color: rgba(34, 37, 52, 0.75)">
-  <a class="navbar-brand" href="#"><img id="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png"></a>
+  <a class="navbar-brand" href="#"><img id="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png"><span id="logo-text" class="ml-3">Rock State Park</span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<?php wp_nav_menu(array('menu_id' => 'primaryNav'));?>
+		<!--<?php //wp_nav_menu(array('menu_id' => 'primaryNav'));?>-->
+	  <?php
+        wp_nav_menu( array(
+            'theme_location' => 'siteNavigation', // Defined when registering the menu
+            'menu_id'        => 'primaryNav',
+            'container'      => false,
+            'depth'          => 2,
+            'menu_class'     => 'navbar-nav mr-auto mt-2 mt-lg-0',
+            'walker'         => new Bootstrap_NavWalker(), // This controls the display of the Bootstrap Navbar
+            'fallback_cb'    => 'Bootstrap_NavWalker::fallback', // For menu fallback
+        ) );
+        ?>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-warning my-2 my-sm-0" type="submit"><i class="material-icons">
@@ -42,7 +53,7 @@ search
       <div class="carousel-item active">
         <!--<img src="images/hero1.jpg" class="d-block w-100" alt="Rock State Park"> -->
 		  <picture>
-					<source class="d-block w-100" srcset="<?php echo get_template_directory_uri(); ?>/images/hero1.jpg" media="(min-width: 800px)" />
+					<source class="d-block w-100" srcset="<?php echo get_template_directory_uri(); ?>/images/hero1.jpg" media="(min-width: 600px)" />
 					<img src="<?php echo get_template_directory_uri(); ?>/images/hero1_mobile.jpg" class="d-block w-100" alt="Rock State Park"/>
 				  </picture>
         <div class="carousel-caption d-none d-md-block">
@@ -52,7 +63,7 @@ search
       </div>
       <div class="carousel-item">
         <picture>
-					<source class="d-block w-100" srcset="<?php echo get_template_directory_uri(); ?>/images/hero2.jpg" media="(min-width: 800px)" />
+					<source class="d-block w-100" srcset="<?php echo get_template_directory_uri(); ?>/images/hero2.jpg" media="(min-width: 600px)" />
 					<img src="<?php echo get_template_directory_uri(); ?>/images/hero2_mobile.jpg" class="d-block w-100" alt="Rock State Park"/>
 				  </picture>
         <div class="carousel-caption d-none d-md-block">
@@ -62,7 +73,7 @@ search
       </div>
       <div class="carousel-item">
         <picture>
-					<source class="d-block w-100" srcset="<?php echo get_template_directory_uri(); ?>/images/hero3.jpg" media="(min-width: 800px)" />
+					<source class="d-block w-100" srcset="<?php echo get_template_directory_uri(); ?>/images/hero3.jpg" media="(min-width: 600px)" />
 					<img src="<?php echo get_template_directory_uri(); ?>/images/hero3_mobile.jpg" class="d-block w-100" alt="Rock State Park"/>
 				  </picture>
         <div class="carousel-caption d-none d-md-block">
@@ -71,14 +82,6 @@ search
         </div>
       </div>
     </div>
-    <a class="carousel-control-prev" href="<?php echo get_template_directory_uri(); ?>/#carouselExampleCaptions" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="<?php echo get_template_directory_uri(); ?>/#carouselExampleCaptions" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
   </div>
 </div>
 </header>
